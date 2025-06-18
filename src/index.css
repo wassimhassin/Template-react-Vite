@@ -74,3 +74,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0783c1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2b66e7;
+}
+body {
+  overflow-x: hidden;
+}
