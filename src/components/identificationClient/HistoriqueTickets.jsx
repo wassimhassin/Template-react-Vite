@@ -1,7 +1,7 @@
 import React from "react";
-import { Filter, Calendar, ChevronRight, Clock } from "lucide-react";
-import Card from "./Card";
-import Badge from "./Badge";
+import {  ChevronRight, Clock } from "lucide-react";
+import Card from "../Card";
+import Badge from "../Badge";
 
 const HistoriqueTickets = ({ onSelect, selectedTicket }) => {
   const tickets = [
@@ -31,16 +31,15 @@ const HistoriqueTickets = ({ onSelect, selectedTicket }) => {
   };
 
   return (
-    <div className="[grid-area:3_/_1_/_6_/_3]">
-      <Card className="p-6 h-full">
-        <div className="flex items-center justify-between mb-4">
+    <div className="col-span-2">
+      <Card className="p-4 sm:p-6 h-full w-full">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-4">
           <h3 className="text-lg font-semibold text-gray-900">Historique des tickets</h3>
           <div className="flex items-center space-x-2">
             <button className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100">
-              <Filter size={16} />
             </button>
             <button className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100">
-              <Calendar size={16} />
+
             </button>
           </div>
         </div>

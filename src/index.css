@@ -87,5 +87,58 @@
   background-color: #2b66e7;
 }
 body {
-  overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+html.no-scrollbar, body.no-scrollbar {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+}
+html.no-scrollbar::-webkit-scrollbar, body.no-scrollbar::-webkit-scrollbar {
+  display: none !important;             /* Chrome, Safari, Opera */
+}
+
+/* Masquer la scrollbar pour tous les navigateurs modernes, priorité maximale */
+.custom-hide-scrollbar {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+.custom-hide-scrollbar::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
+
+#admin-scroll-panel {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE and Edge */
+}
+#admin-scroll-panel::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Forcer la disparition de la scrollbar dans les panels .no-scrollbar (tous navigateurs) */
+.no-scrollbar, .no-scrollbar * {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;     /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar, .no-scrollbar *::-webkit-scrollbar {
+  display: none !important;             /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
